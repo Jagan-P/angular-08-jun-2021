@@ -1,6 +1,0 @@
-Basic building blocks of angular
-
-1. Component - Generate/have view associated, business logic
-2. Directives - Doesn't have a view associated with it, it modifies the DOM tree or view of the host element
-3. Pipes - Transform the data in the view part
-4. Services - Deal with data or repetitive logic

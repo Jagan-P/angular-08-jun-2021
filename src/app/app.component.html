@@ -1,33 +1,18 @@
-<p>First para</p>
+<p>Root component</p>
+<button routerLink="dashboard">Dashboard</button>
+<button routerLink="admin-dashboard">Dashboard</button>
 
-<!-- interpolation -->
-{{title}}
-{{second}}
-{{third}}
+<app-admin-dashboard></app-admin-dashboard>
 
-<!-- <p [disabled]="isButtonDisabled">Jagan</p> -->
-<p [ngClass]="paragraphClass">Para</p>
-<button id="button" [disabled]="isButtonDisabled">Submit</button>
-<!-- <button disabled>Submit</button> -->
-
-<!-- event -->
-<button (click)="captureClick()">Click</button>
-
-<input [value]="inputValueSecond" type="text" (keyup)="inputValueKeydown($event)" />
-{{inputValueSecond}}
-<input type="text" [(ngModel)]="inputValue" />
-{{inputValue}}
-
-<p>Outside</p>
-<div>
-    <p>Inside</p>
-</div>
+<a [ngStyle]="anchorStyle">Link</a>
+<a [href]="hrefValue">Dynamic Link</a>
 
 <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
+  <li *ngFor="let item of list">{{item}}</li>
 </ul>
 
-<p app-dashboard></p>
+<p *ngIf="canRenderParagraph">Element</p>
+<p appBackgroundDirective>Custom Directive</p>
+
+<!-- <a href="/dashboard">Dashboard link</a> -->
+<router-outlet></router-outlet>
