@@ -1,7 +1,29 @@
 .font {
-    color: red;
+  color: red;
 }
 
 .background {
-    background-color: green;
+  background-color: green;
+}
+
+// div p {
+//     color: orange;
+// }
+
+div {
+  p {
+    color: orange;
+  }
+}
+
+$backgrounds: (
+  1: orange,
+  2: green,
+  3: yellow,
+);
+
+@for $i from 1 through 3 {
+  li:nth-child(#{$i}) {
+    background-color: map-get($backgrounds, $i);
+  }
 }
