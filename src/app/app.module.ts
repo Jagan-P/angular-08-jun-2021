@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { BackgroundDirectiveDirective } from './background-directive.directive';
+import { CustomStructuralDirectiveDirective } from './custom-structural-directive.directive';
+import { DatatableDirective } from './datatable.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AdminDashboardComponent,
-    BackgroundDirectiveDirective
+    BackgroundDirectiveDirective,
+    CustomStructuralDirectiveDirective,
+    DatatableDirective
   ],
   imports: [
     BrowserModule,

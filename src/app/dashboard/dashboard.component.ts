@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  condition = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleTable() {
+    this.condition = !this.condition;
+  }
 }

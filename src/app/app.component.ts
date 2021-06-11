@@ -10,6 +10,13 @@ export class AppComponent {
   anchorStyle = {"color": 'red'};
   hrefValue = '/dashboard';
   canRenderParagraph = true;
+  condition = false;
+  dataFromChild = '';
 
   list = ["one", "two", "three"];
+
+  dataToParent(dataFromChild) {
+    console.log(dataFromChild);
+    this.dataFromChild = dataFromChild;
+  }
 }

@@ -2,7 +2,7 @@
 <button routerLink="dashboard">Dashboard</button>
 <button routerLink="admin-dashboard">Dashboard</button>
 
-<app-admin-dashboard></app-admin-dashboard>
+<app-admin-dashboard dataToChild="some text" (dataToParent)="dataToParent($event)"></app-admin-dashboard>
 
 <a [ngStyle]="anchorStyle">Link</a>
 <a [href]="hrefValue">Dynamic Link</a>
@@ -14,5 +14,9 @@
 <p *ngIf="canRenderParagraph">Element</p>
 <p appBackgroundDirective>Custom Directive</p>
 
+<div *appCustomStructuralDirective="false">
+  <p>Custom structural directive</p>
+</div>
+{{dataFromChild}}
 <!-- <a href="/dashboard">Dashboard link</a> -->
 <router-outlet></router-outlet>
