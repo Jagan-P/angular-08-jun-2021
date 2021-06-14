@@ -8,10 +8,22 @@ declare var $:any;
 })
 export class DashboardComponent implements OnInit {
   condition = false;
+  inputValue='';
 
   constructor() { }
 
   ngOnInit() {
+    // console.log("jagan",document.getElementById("jagan"));
+    document.getElementById("jagan").style.display="none";
+  }
+
+  ngDoCheck() {
+    console.log("ngDoCheck");
+  }
+
+  valueChange($event) {
+    // console.log($event.target.value);
+    this.inputValue = $event.target.value;
   }
 
   toggleTable() {

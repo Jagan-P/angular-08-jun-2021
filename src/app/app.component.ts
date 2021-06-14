@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,18 @@ export class AppComponent {
   canRenderParagraph = true;
   condition = false;
   dataFromChild = '';
+  dataToChild = 'some text';
+  @ViewChild("templateRef", {static: true}) templateRef;
 
   list = ["one", "two", "three"];
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.dataToChild = 'some new text';
+    }, 5000);
+    // document.getElementById("unique").style.display="none";
+    console.log("templateRef",this.templateRef);
+  }
 
   dataToParent(dataFromChild) {
     console.log(dataFromChild);

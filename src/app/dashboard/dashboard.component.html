@@ -1,9 +1,10 @@
 <p>dashboard works!</p>
-<button (click)="toggleTable()">Toggle directive</button>
-<table class="display" style="width:100%" appDatatable *ngIf="condition">
+<button id="jagan" (click)="toggleTable()">Toggle directive</button>
+<input type="text" (keyup)="valueChange($event)"/>
+<table class="display" style="width:100%" appDatatable [inputValue]="inputValue">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>{{dynamicText}}</th>
             <th>Position</th>
             <th>Office</th>
             <th>Age</th>

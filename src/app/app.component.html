@@ -1,9 +1,9 @@
-<p>Root component</p>
+<p #templateRef appBackgroundDirective>Root component</p>
 <button routerLink="dashboard">Dashboard</button>
 <button routerLink="admin-dashboard">Dashboard</button>
 
-<app-admin-dashboard dataToChild="some text" (dataToParent)="dataToParent($event)"></app-admin-dashboard>
-
+<app-admin-dashboard [dataToChild]="dataToChild" (dataToParent)="dataToParent($event)"></app-admin-dashboard>
+<app-dashboard></app-dashboard>
 <a [ngStyle]="anchorStyle">Link</a>
 <a [href]="hrefValue">Dynamic Link</a>
 
