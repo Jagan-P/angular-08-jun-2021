@@ -14,7 +14,10 @@ export class AdminDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.dataToParent.emit("data from child");
+    setTimeout(() => {
+      
+      this.dataToParent.emit("data from child");
+    }, 1000);
   }
 
 }

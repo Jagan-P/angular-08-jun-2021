@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 declare var $:any;
 
 @Component({
@@ -9,12 +9,18 @@ declare var $:any;
 export class DashboardComponent implements OnInit {
   condition = false;
   inputValue='';
+  @ViewChild("templateRef", {static: true}) templateRef: HTMLElement;
 
   constructor() { }
 
   ngOnInit() {
     // console.log("jagan",document.getElementById("jagan"));
     document.getElementById("jagan").style.display="none";
+    console.log("templateRef",this.templateRef);
+  }
+
+  ngAfterViewInit() {
+    console.log("templateRef",this.templateRef);
   }
 
   ngDoCheck() {

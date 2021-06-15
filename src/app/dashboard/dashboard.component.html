@@ -1,6 +1,7 @@
 <p>dashboard works!</p>
 <button id="jagan" (click)="toggleTable()">Toggle directive</button>
 <input type="text" (keyup)="valueChange($event)"/>
+<ng-content select=".header"></ng-content>
 <table class="display" style="width:100%" appDatatable [inputValue]="inputValue">
     <thead>
         <tr>
@@ -481,3 +482,4 @@
         </tr>
     </tfoot>
 </table>
+<ng-content select="[footer]"></ng-content>

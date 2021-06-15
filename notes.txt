@@ -1,0 +1,12 @@
+Basic building blocks of angular
+
+1. Component - Generate/have view associated, business logic
+2. Directives - Doesn't have a view associated with it, it modifies the DOM tree or view of the host element
+3. Pipes - Transform the data in the view part
+4. Services - Deal with data or repetitive logic
+
+Template querying
+ - ViewChild - Returns first match of a template reference variable or a component or directive as a selector
+ - ViewChildren - Returns all matches of a template reference variable or a component or directive as a selector
+ - ContentChild - Returns first match of a template reference variable or a component or directive as a selector from projected content
+ - ContentChildren - Returns all matches of a template reference variable or a component or directive as a selector from projected content

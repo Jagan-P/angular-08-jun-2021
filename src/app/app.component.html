@@ -1,14 +1,35 @@
-<p #templateRef appBackgroundDirective>Root component</p>
+<ng-container *ngIf="showTemplate">
+<p appBackgroundDirective>Root component</p>
 <button routerLink="dashboard">Dashboard</button>
 <button routerLink="admin-dashboard">Dashboard</button>
 
 <app-admin-dashboard [dataToChild]="dataToChild" (dataToParent)="dataToParent($event)"></app-admin-dashboard>
-<app-dashboard></app-dashboard>
+
+<ng-container *ngTemplateOutlet="templateRef">
+
+</ng-container>
+
+<ng-template #templateRef>
+  A prepared template ready to be rendered
+</ng-template>
+
+<app-dashboard>
+  <p class="header">Some header projected content</p>
+  <p footer>Some footer projected content</p>
+</app-dashboard>
+
+<app-dashboard>
+  <p class="header">Some new header projected content</p>
+  <p footer>Some new footer projected content</p>
+</app-dashboard>
+
 <a [ngStyle]="anchorStyle">Link</a>
 <a [href]="hrefValue">Dynamic Link</a>
 
 <ul>
-  <li *ngFor="let item of list">{{item}}</li>
+  <ng-container *ngFor="let item of list; let i = index">
+    <li *ngIf="i%2==0">{{item}}</li>
+  </ng-container>
 </ul>
 
 <p *ngIf="canRenderParagraph">Element</p>
@@ -20,3 +41,4 @@
 {{dataFromChild}}
 <!-- <a href="/dashboard">Dashboard link</a> -->
 <router-outlet></router-outlet>
+</ng-container>
