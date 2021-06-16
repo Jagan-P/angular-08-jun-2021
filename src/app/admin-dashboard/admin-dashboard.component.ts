@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -8,16 +8,29 @@ import { Component, Input, OnInit, Output, EventEmitter, ViewEncapsulation } fro
 })
 export class AdminDashboardComponent implements OnInit {
   @Input() dataToChild: string="";
-
+  dataToTransform = "data";
   @Output() dataToParent: EventEmitter<any> = new EventEmitter<any>();
-
-  constructor() { }
+  dateNow = new Date();
+  heroes = [
+    {name: "superman", canFly: true},
+    {name: "batman", canFly: false},
+    {name: "superwoman", canFly: true}
+  ]
+  constructor(
+  ) { }
 
   ngOnInit() {
     setTimeout(() => {
       
       this.dataToParent.emit("data from child");
     }, 1000);
+  }
+
+  revealData() {
+    console.log(this.dataToTransform);
+    this.heroes.push({name: "spiderman", canFly: true});
+    this.heroes = [...this.heroes];
+    console.log(this.heroes);
   }
 
 }

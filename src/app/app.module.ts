@@ -8,6 +8,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { BackgroundDirectiveDirective } from './background-directive.directive';
 import { CustomStructuralDirectiveDirective } from './custom-structural-directive.directive';
 import { DatatableDirective } from './datatable.directive';
+import { HostBindingDirective } from './host-binding.directive';
+import { HostListenerDirective } from './host-listener.directive';
+import { FlyingHeroesPipe, ReplaceAwith0Pipe } from './replace-awith0.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,11 @@ import { DatatableDirective } from './datatable.directive';
     AdminDashboardComponent,
     BackgroundDirectiveDirective,
     CustomStructuralDirectiveDirective,
-    DatatableDirective
+    DatatableDirective,
+    HostBindingDirective,
+    HostListenerDirective,
+    ReplaceAwith0Pipe,
+    FlyingHeroesPipe
   ],
   imports: [
     BrowserModule,

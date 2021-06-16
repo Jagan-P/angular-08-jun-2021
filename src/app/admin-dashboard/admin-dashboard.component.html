@@ -1,3 +1,15 @@
 <p id="unique">admin-dashboard works!</p>
 <p >new admin-dashboard works!</p>
 Data from parent - {{dataToChild}}
+
+<button appHostBinding (click)="revealData()">Reveal</button>
+
+<button appHostListener>Take me to Dashboard component</button>
+
+<p>{{dataToTransform | uppercase | replaceAwith0}}</p>
+
+<p>{{dateNow | date:'medium'}}</p>
+
+<div *ngFor="let hero of (heroes | flyingHeroes)">
+    {{hero.name}}
+</div>
