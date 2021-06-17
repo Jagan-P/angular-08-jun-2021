@@ -40,9 +40,9 @@ export class AppComponent {
       console.log("dashboardComponent changed",data);
     })
 
-    this.adminDashboardComponent.dataToParent.subscribe((data)=>{
-      console.log("dataToParent", data);
-    })
+    // this.adminDashboardComponent.dataToParent.subscribe((data)=>{
+    //   console.log("dataToParent", data);
+    // })
   }
 
   dataToParent(dataFromChild) {

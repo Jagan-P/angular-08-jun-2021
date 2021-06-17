@@ -11,6 +11,9 @@ import { DatatableDirective } from './datatable.directive';
 import { HostBindingDirective } from './host-binding.directive';
 import { HostListenerDirective } from './host-listener.directive';
 import { FlyingHeroesPipe, ReplaceAwith0Pipe } from './replace-awith0.pipe';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +26,15 @@ import { FlyingHeroesPipe, ReplaceAwith0Pipe } from './replace-awith0.pipe';
     HostBindingDirective,
     HostListenerDirective,
     ReplaceAwith0Pipe,
-    FlyingHeroesPipe
+    FlyingHeroesPipe,
+    TemplateDrivenFormsComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

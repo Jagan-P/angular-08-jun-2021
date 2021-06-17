@@ -1,0 +1,9 @@
+<form #heroForm="ngForm">
+    <input type="text" class="form-control" id="name" required
+       [(ngModel)]="name" name="nameRef" #nameRef>
+    <input type="text" class="form-control" id="email" required
+       [(ngModel)]="email" name="emailRef" #emailRef>
+
+    <!-- {{heroForm.controls.nameRef | json}} -->
+    <button type="submit" [disabled]="!heroForm.valid">Submit</button>
+</form>
