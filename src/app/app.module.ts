@@ -11,7 +11,7 @@ import { DatatableDirective } from './datatable.directive';
 import { HostBindingDirective } from './host-binding.directive';
 import { HostListenerDirective } from './host-listener.directive';
 import { FlyingHeroesPipe, ReplaceAwith0Pipe } from './replace-awith0.pipe';
-import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { EmailValidatorDirective, TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
@@ -28,7 +28,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     ReplaceAwith0Pipe,
     FlyingHeroesPipe,
     TemplateDrivenFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    EmailValidatorDirective
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,9 @@
+<form [formGroup]="profileForm">
 <label for="name">Name: </label>
-<input id="name" type="text" [formControl]="name">
+<input id="name" type="text" formControlName="name">
+<p>{{profileForm.controls.name?.errors | json}}</p>
+<input type="text" formControlName="email">
+<p>{{profileForm.controls.email?.errors?.email}}</p>
 
-<button [disabled]="!name.valid">Submit</button>
+<button [disabled]="!profileForm.valid">Submit</button>
+</form>
