@@ -4,6 +4,8 @@
 <p>{{profileForm.controls.name?.errors | json}}</p>
 <input type="text" formControlName="email">
 <p>{{profileForm.controls.email?.errors?.email}}</p>
+<input type="number" formControlName="number">
+<p>{{profileForm.controls.number?.errors?.number}}</p>
 
 <button [disabled]="!profileForm.valid">Submit</button>
 </form>

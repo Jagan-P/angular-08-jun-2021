@@ -14,6 +14,7 @@ import { FlyingHeroesPipe, ReplaceAwith0Pipe } from './replace-awith0.pipe';
 import { EmailValidatorDirective, TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { RxJsComponent } from './rx-js/rx-js.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     FlyingHeroesPipe,
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
-    EmailValidatorDirective
+    EmailValidatorDirective,
+    RxJsComponent
   ],
   imports: [
     BrowserModule,
