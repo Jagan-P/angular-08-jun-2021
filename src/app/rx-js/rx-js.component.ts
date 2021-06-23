@@ -36,7 +36,7 @@ export class RxJsComponent implements OnInit {
     // });
 
 
-    // const subject = new Subject<number>();
+    const subject = new Subject<number>();
 
     // subject.next(1);
     // subject.next(2);
@@ -47,6 +47,12 @@ export class RxJsComponent implements OnInit {
     // subject.subscribe({
     //   next: (v) => console.log(`observerB: ${v}`)
     // });
+
+    // subject.subscribe((data)=>{
+    //   console.log("subject",data);
+    // })
+
+    // subject.next(1);
 
     // const subject = new BehaviorSubject<number>(0);
 
@@ -60,19 +66,19 @@ export class RxJsComponent implements OnInit {
     //   next: (v) => console.log(`observerB: ${v}`)
     // });
 
-    const subject = new ReplaySubject<number>(4);
+    // const subject = new ReplaySubject<number>(4);
 
-    subject.next(1);
-    subject.next(2);
-    subject.next(3);
-    subject.next(4);
+    // subject.next(1);
+    // subject.next(2);
+    // subject.next(3);
+    // subject.next(4);
     
-    subject.subscribe({
-      next: (v) => console.log(`observerA: ${v}`)
-    });
-    subject.subscribe({
-      next: (v) => console.log(`observerB: ${v}`)
-    });
+    // subject.subscribe({
+    //   next: (v) => console.log(`observerA: ${v}`)
+    // });
+    // subject.subscribe({
+    //   next: (v) => console.log(`observerB: ${v}`)
+    // });
 
   }
 
