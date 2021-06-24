@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
+import { take, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rx-js',
@@ -35,18 +36,21 @@ export class RxJsComponent implements OnInit {
     //   complete() { console.log('new done'); }
     // });
 
+    const unsubscribe = new Subject<any>();
 
     const subject = new Subject<number>();
 
-    // subject.next(1);
-    // subject.next(2);
+    subject.pipe(take(2)).subscribe({
+      next: (v) => console.log(`observerA: ${v}`)
+    });
+    subject.pipe(takeUntil(unsubscribe)).subscribe({
+      next: (v) => console.log(`observerB: ${v}`)
+    });
 
-    // subject.subscribe({
-    //   next: (v) => console.log(`observerA: ${v}`)
-    // });
-    // subject.subscribe({
-    //   next: (v) => console.log(`observerB: ${v}`)
-    // });
+    subject.next(10);
+    subject.next(2);
+    unsubscribe.next(0);
+    
 
     // subject.subscribe((data)=>{
     //   console.log("subject",data);
